@@ -1,0 +1,49 @@
+--
+- name: backup show version and other user level commands
+  hosts: all
+  gather_facts: yes
+  connection: network_cli
+
+  tasks:
+    - name: run multiple commands on remote nodes
+      debug:
+        var: ansible_net_version
+        
+    - name: get serial
+      debug:
+        var: ansible_net_serialnum
+
+    - name: Check Status of interfaces
+      debug:
+        var: ansible_net_neighbors
+
+    - name: 
+      debug:
+        var: ansible_facts.keys()
+
+     
+ #"ansible_facts.keys()": [
+        #"network_resources",
+        #"net_gather_network_resources",
+        #"net_gather_subset",
+        #"net_all_ipv4_addresses",
+        #"net_all_ipv6_addresses",
+        #"net_neighbors",
+        #"net_interfaces",
+        #"net_filesystems",
+        #"net_filesystems_info",
+        #"net_memtotal_mb",
+        #"net_memfree_mb",
+        #"net_system",
+        #"net_model",
+        #"net_image",
+        #"net_version",
+        #"net_hostname",
+        #"net_api",
+        #"net_python_version",
+        #"net_iostype",
+        #"net_serialnum",
+        #"net_stacked_models",
+        #"net_stacked_serialnums",
+        #"net_virtual_switch",
+        #"_ansible_facts_gathered"
