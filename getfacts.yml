@@ -1,25 +1,25 @@
---
-- name: backup show version and other user level commands
-  hosts: all
-  gather_facts: yes
-  connection: network_cli
+---
+  - name: backup show version and other user level commands
+    hosts: all
+    gather_facts: yes
+    connection: network_cli
 
-  tasks:
-    - name: run multiple commands on remote nodes
-      debug:
-        var: ansible_net_version
+    tasks:
+      - name: run multiple commands on remote nodes
+        debug:
+          var: ansible_net_version
         
-    - name: get serial
-      debug:
-        var: ansible_net_serialnum
+      - name: get serial
+        debug:
+          var: ansible_net_serialnum
 
-    - name: Check Status of interfaces
-      debug:
-        var: ansible_net_neighbors
+      - name: Check Status of interfaces
+        debug:
+          var: ansible_net_neighbors
 
-    - name: 
-      debug:
-        var: ansible_facts.keys()
+      - name: 
+        debug:
+          var: ansible_facts.keys()
 
      
  #"ansible_facts.keys()": [
